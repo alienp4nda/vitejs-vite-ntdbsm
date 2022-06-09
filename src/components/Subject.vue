@@ -16,16 +16,12 @@ defineProps<{ subject: string; timeslot: string }>();
   width: 10em;
   height: 5em;
   margin: 1em;
-  background-color: #0e2533;
+  background-color: #414141;
   border-radius: 0.5em;
 }
 
 h3 {
   padding-top: 0.5em;
-  margin: 0.5em;
-}
-
-.timeslot {
   margin: 0.5em;
 }
 </style>

@@ -35,13 +35,22 @@ const schedule = [
 </script>
 
 <template>
-  <DayOfWeek v-for="item in schedule" :dow="item.dow">
-    <Subject
-      v-for="clase in item.classes"
-      :subject="clase.subject"
-      :timeslot="clase.timeslot"
-    />
-  </DayOfWeek>
+  <div class="container">
+    <DayOfWeek v-for="item in schedule" :dow="item.dow">
+      <Subject
+        v-for="clase in item.classes"
+        :subject="clase.subject"
+        :timeslot="clase.timeslot"
+      />
+    </DayOfWeek>
+  </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  gap: 0.5em;
+}
+</style>
