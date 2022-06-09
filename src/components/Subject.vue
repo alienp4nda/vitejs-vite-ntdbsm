@@ -23,5 +23,6 @@ defineProps<{ subject: string; timeslot: string }>();
 h3 {
   padding-top: 0.5em;
   margin: 0.5em;
+  font-weight: normal;
 }
 </style>

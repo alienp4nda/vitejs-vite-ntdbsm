@@ -29,12 +29,56 @@ const schedule = [
         subject: 'Writing',
         timeslot: '09:00 - 10:00',
       },
+      {
+        subject: 'Science',
+        timeslot: '09:00 - 10:00',
+      },
+    ],
+  },
+  {
+    dow: 'Wednesday',
+    classes: [
+      {
+        subject: 'Math',
+        timeslot: '09:00 - 10:00',
+      },
+      {
+        subject: 'Writing',
+        timeslot: '09:00 - 10:00',
+      },
+    ],
+  },
+  {
+    dow: 'Thursday',
+    classes: [
+      {
+        subject: 'Math',
+        timeslot: '09:00 - 10:00',
+      },
+      {
+        subject: 'Writing',
+        timeslot: '09:00 - 10:00',
+      },
+    ],
+  },
+  {
+    dow: 'Friday',
+    classes: [
+      {
+        subject: 'Math',
+        timeslot: '09:00 - 10:00',
+      },
+      {
+        subject: 'Writing',
+        timeslot: '09:00 - 10:00',
+      },
     ],
   },
 ];
 </script>
 
 <template>
+  <h2>Class Schedule</h2>
   <div class="container">
     <DayOfWeek v-for="item in schedule" :dow="item.dow">
       <Subject

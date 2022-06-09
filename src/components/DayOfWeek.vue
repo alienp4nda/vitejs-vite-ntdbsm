@@ -4,7 +4,7 @@ defineProps<{ dow: string }>();
 
 <template>
   <div class="dow_container">
-    <h2>{{ dow }}</h2>
+    <h3>{{ dow }}</h3>
     <slot></slot>
   </div>
 </template>
@@ -17,7 +17,7 @@ defineProps<{ dow: string }>();
   border-radius: 0.5em;
 }
 
-h2 {
+h3 {
   background-color: #414141;
   margin: 0;
   padding: 0.35em;
