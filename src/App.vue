@@ -78,6 +78,9 @@ const schedule = [
 </script>
 
 <template>
+  <nav>
+    <a href="#">Login</a>
+  </nav>
   <h2>Class Schedule</h2>
   <div class="container">
     <DayOfWeek v-for="item in schedule" :dow="item.dow">
@@ -96,5 +99,19 @@ const schedule = [
   flex-flow: row wrap;
   justify-content: center;
   gap: 0.5em;
+}
+
+nav {
+  position: absolute;
+  top: 1em;
+  right: 0.75em;
+}
+
+nav a {
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #165a72;
+  padding: 0.75em;
+  border-radius: 0.5em;
 }
 </style>
