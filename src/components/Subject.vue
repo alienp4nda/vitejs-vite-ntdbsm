@@ -16,7 +16,7 @@ defineProps<{ subject: string; timeslot: string }>();
   width: 10em;
   height: 5em;
   margin: 1em;
-  background-color: #414141;
+  background-color: #545454;
   border-radius: 0.5em;
 }
 

@@ -83,11 +83,17 @@ const schedule = [
   </nav>
   <h2>Class Schedule</h2>
   <div class="container">
-    <DayOfWeek v-for="item in schedule" :dow="item.dow">
+    <DayOfWeek
+      v-for="(item, index) in schedule"
+      :key="item + index"
+      :dow="item.dow"
+      class="dow"
+    >
       <Subject
         v-for="clase in item.classes"
         :subject="clase.subject"
         :timeslot="clase.timeslot"
+        class="subject"
       />
     </DayOfWeek>
   </div>
@@ -113,5 +119,33 @@ nav a {
   background-color: #165a72;
   padding: 0.75em;
   border-radius: 0.5em;
+}
+
+@media (max-width: 30.5em) {
+  .container {
+    margin: 0 auto;
+  }
+
+  .dow {
+    width: 100%;
+  }
+
+  .subject {
+    width: 90%;
+  }
+
+  nav {
+    width: 100%;
+    position: relative;
+    right: inherit;
+    top: inherit;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+  }
+
+  nav a {
+    padding-left: 10em;
+    padding-right: 10em;
+  }
 }
 </style>
