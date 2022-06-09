@@ -11,10 +11,14 @@ const schedule = [
       {
         subject: 'Math',
         timeslot: '09:00 - 10:00',
+        started: '07:50 2022-06-07',
+        stopped: '08:50 2022-06-07',
       },
       {
         subject: 'Writing',
         timeslot: '09:00 - 10:00',
+        started: '08:50 2022-06-07',
+        stopped: '',
       },
     ],
   },
@@ -24,14 +28,20 @@ const schedule = [
       {
         subject: 'Math',
         timeslot: '09:00 - 10:00',
+        started: '',
+        stopped: '',
       },
       {
         subject: 'Writing',
         timeslot: '09:00 - 10:00',
+        started: '',
+        stopped: '',
       },
       {
         subject: 'Science',
         timeslot: '09:00 - 10:00',
+        started: '',
+        stopped: '',
       },
     ],
   },
@@ -41,10 +51,14 @@ const schedule = [
       {
         subject: 'Math',
         timeslot: '09:00 - 10:00',
+        started: '',
+        stopped: '',
       },
       {
         subject: 'Writing',
         timeslot: '09:00 - 10:00',
+        started: '',
+        stopped: '',
       },
     ],
   },
@@ -54,10 +68,14 @@ const schedule = [
       {
         subject: 'Math',
         timeslot: '09:00 - 10:00',
+        started: '',
+        stopped: '',
       },
       {
         subject: 'Writing',
         timeslot: '09:00 - 10:00',
+        started: '',
+        stopped: '',
       },
     ],
   },
@@ -67,10 +85,14 @@ const schedule = [
       {
         subject: 'Math',
         timeslot: '09:00 - 10:00',
+        started: '',
+        stopped: '',
       },
       {
         subject: 'Writing',
         timeslot: '09:00 - 10:00',
+        started: '',
+        stopped: '',
       },
     ],
   },
@@ -89,12 +111,7 @@ const schedule = [
       :dow="item.dow"
       class="dow"
     >
-      <Subject
-        v-for="clase in item.classes"
-        :subject="clase.subject"
-        :timeslot="clase.timeslot"
-        class="subject"
-      />
+      <Subject v-for="clase in item.classes" :clase="clase" class="subject" />
     </DayOfWeek>
   </div>
 </template>

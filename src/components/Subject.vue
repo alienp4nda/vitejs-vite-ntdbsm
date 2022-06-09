@@ -1,12 +1,23 @@
 <script setup lang="ts">
-defineProps<{ subject: string; timeslot: string }>();
+defineProps<{
+  clase: {
+    subject: string;
+    timeslot: string;
+    started: string;
+    stopped: string;
+  };
+}>();
 </script>
 
 <template>
   <div class="subject_container">
-    <h3>{{ subject }}</h3>
+    <h3>
+      {{ clase.subject }}
+      <span v-if="clase.started !== '' && clase.stopped === ''">(Started)</span>
+      <span v-else-if="clase.stopped !== ''">(Completed)</span>
+    </h3>
     <div class="timeslot">
-      {{ timeslot }}
+      {{ clase.timeslot }}
     </div>
   </div>
 </template>
@@ -24,5 +35,9 @@ h3 {
   padding-top: 0.5em;
   margin: 0.5em;
   font-weight: normal;
+}
+
+h3 span {
+  font-size: 1rem;
 }
 </style>
