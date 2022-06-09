@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { computed } from 'vue';
 defineProps<{
   clase: {
     subject: string;
@@ -9,12 +10,25 @@ defineProps<{
 }>();
 </script>
 
+<script lang="ts">
+export default {
+  computed: {
+    subjectStatus() {
+      if (this.clase.started !== '' && this.clase.stopped === '') {
+        return '(Started)';
+      } else if (this.clase.stopped !== '') {
+        return '(Completed)';
+      }
+    },
+  },
+};
+</script>
+
 <template>
   <div class="subject_container">
     <h3>
       {{ clase.subject }}
-      <span v-if="clase.started !== '' && clase.stopped === ''">(Started)</span>
-      <span v-else-if="clase.stopped !== ''">(Completed)</span>
+      <span>{{ subjectStatus }}</span>
     </h3>
     <div class="timeslot">
       {{ clase.timeslot }}
