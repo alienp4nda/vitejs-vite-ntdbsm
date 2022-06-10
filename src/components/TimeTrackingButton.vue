@@ -1,5 +1,5 @@
 <script setup lang="ts">
-defineProps<{ btnText: sttring }>()
+const props = defineProps<{ btnText: string }>();
 </script>
 
 <template>

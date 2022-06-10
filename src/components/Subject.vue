@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue';
-defineProps<{
+import TimeTrackingButton from './TimeTrackingButton.vue';
+const props = defineProps<{
   clase: {
     subject: string;
     timeslot: string;
@@ -8,31 +9,45 @@ defineProps<{
     stopped: string;
   };
 }>();
-</script>
 
-<script lang="ts">
-export default {
-  computed: {
-    subjectStatus() {
-      if (this.clase.started !== '' && this.clase.stopped === '') {
-        return '(Started)';
-      } else if (this.clase.stopped !== '') {
-        return '(Completed)';
-      }
-    },
-  },
+// Subject status
+enum statuses {
+  Started = 'Started',
+  Completed = 'Completed',
+}
+
+const getSubjectStatus = () => {
+  if (props.clase.started !== '' && props.clase.stopped === '') {
+    return statuses.Started;
+  } else if (props.clase.stopped !== '') {
+    return statuses.Completed;
+  } else {
+    return '';
+  }
 };
+
+const subjectStatus = computed(() => getSubjectStatus());
+
+// Time Tracking Button
+const timeTrackingButtonText =
+  getSubjectStatus() === statuses.Started ? 'Stop' : 'Start';
+const timeTrackingButtonVisable =
+  getSubjectStatus() === statuses.Completed ? false : true;
 </script>
 
 <template>
   <div class="subject_container">
     <h3>
       {{ clase.subject }}
-      <span>{{ subjectStatus }}</span>
+      <span v-if="subjectStatus !== ''">({{ subjectStatus }})</span>
     </h3>
     <div class="timeslot">
       {{ clase.timeslot }}
     </div>
+    <TimeTrackingButton
+      v-if="timeTrackingButtonVisable"
+      :btnText="timeTrackingButtonText"
+    />
   </div>
 </template>
 
