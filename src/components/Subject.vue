@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { computed } from 'vue';
-import TimeTrackingButton from './TimeTrackingButton.vue';
 
 // Props
 interface Props {
@@ -55,10 +54,9 @@ const timeTrackingButtonVisable =
     <div class="timeslot">
       {{ clase.timeslot }}
     </div>
-    <TimeTrackingButton
-      v-if="timeTrackingButtonVisable"
-      :btnText="timeTrackingButtonText"
-    />
+    <button type="button" v-if="timeTrackingButtonVisable">
+      {{ timeTrackingButtonText }}
+    </button>
   </div>
 </template>
 
