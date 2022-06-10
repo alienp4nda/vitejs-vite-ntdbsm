@@ -20,7 +20,7 @@ enum statuses {
   Completed = 'Completed',
 }
 
-const getSubjectStatus = () => {
+const getSubjectStatus = <string>() => {
   if (props.clase.started !== '' && props.clase.stopped === '') {
     return statuses.Started;
   } else if (props.clase.stopped !== '') {
@@ -30,7 +30,7 @@ const getSubjectStatus = () => {
   }
 };
 
-const subjectStatus = computed(() => getSubjectStatus());
+const subjectStatus = computed<string>(() => getSubjectStatus());
 
 // Time Tracking Button
 const timeTrackingButtonText =
