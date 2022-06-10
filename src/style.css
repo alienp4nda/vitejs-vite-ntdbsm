@@ -28,6 +28,31 @@ body {
   text-align: center;
 }
 
+button {
+  display: inline-block;
+  border: none;
+  border-radius: 0.5em;
+  margin: 0;
+  text-decoration: none;
+  background: #165a72;
+  color: #ffffff;
+  font-size: 1rem;
+  cursor: pointer;
+  text-align: center;
+  transition: background 250ms ease-in-out, transform 150ms ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+button:hover,
+button:focus {
+  background: #1e7c9d;
+}
+
+button:active {
+  transform: scale(0.99);
+}
+
 @media (max-width: 30.5em) {
   #app {
     padding: 1rem;

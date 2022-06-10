@@ -101,7 +101,7 @@ const schedule = [
 
 <template>
   <nav>
-    <a href="#">Login</a>
+    <button type="button">Login</button>
   </nav>
   <h2>Class Schedule</h2>
   <div class="container">
@@ -130,12 +130,8 @@ nav {
   right: 0.75em;
 }
 
-nav a {
-  text-decoration: none;
-  color: #ffffff;
-  background-color: #165a72;
+nav button {
   padding: 0.75em;
-  border-radius: 0.5em;
 }
 
 @media (max-width: 30.5em) {
@@ -160,7 +156,7 @@ nav a {
     margin-bottom: 1.5em;
   }
 
-  nav a {
+  nav button {
     padding-left: 10em;
     padding-right: 10em;
   }

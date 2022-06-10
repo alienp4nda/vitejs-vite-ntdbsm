@@ -36,10 +36,17 @@ const timeTrackingButtonVisable =
 </script>
 
 <template>
-  <div class="subject_container">
+  <div
+    class="subject_container"
+    :class="{
+      isCompleted: subjectStatus === statuses.Completed,
+    }"
+  >
     <h3>
       {{ clase.subject }}
-      <span v-if="subjectStatus !== ''">({{ subjectStatus }})</span>
+      <span class="subjectStatus" v-if="subjectStatus !== ''"
+        >({{ subjectStatus }})</span
+      >
     </h3>
     <div class="timeslot">
       {{ clase.timeslot }}
@@ -54,19 +61,47 @@ const timeTrackingButtonVisable =
 <style scoped>
 .subject_container {
   width: 10em;
-  height: 5em;
   margin: 1em;
   background-color: #545454;
   border-radius: 0.5em;
 }
 
+.isCompleted {
+  background-color: #16725c;
+}
+
+.subjectStatus {
+  display: block;
+  margin-top: 0.25em;
+}
+
 h3 {
   padding-top: 0.5em;
-  margin: 0.5em;
+  margin: 0.25em;
   font-weight: normal;
 }
 
 h3 span {
   font-size: 1rem;
+}
+
+button {
+  background-color: #1a6b87;
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  margin-top: 0.35em;
+  margin-bottom: 0.35em;
+  width: 8rem;
+}
+
+button:hover,
+button:focus {
+  background-color: #228db2;
+}
+
+@media (max-width: 30.5em) {
+  button {
+    width: 85%;
+  }
 }
 </style>
