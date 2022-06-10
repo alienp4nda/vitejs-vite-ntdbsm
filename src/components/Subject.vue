@@ -1,14 +1,18 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 import TimeTrackingButton from './TimeTrackingButton.vue';
-const props = defineProps<{
+
+// Props
+interface Props {
   clase: {
     subject: string;
     timeslot: string;
     started: string;
     stopped: string;
   };
-}>();
+}
+
+const props = defineProps<Props>();
 
 // Subject status
 enum statuses {
