@@ -4,7 +4,21 @@
 import Subject from './components/Subject.vue';
 import DayOfWeek from './components/DayOfWeek.vue';
 
-const schedule = [
+interface Clase {
+  subject: string;
+  timeslot: string;
+  started: string;
+  stopped: string;
+}
+
+interface Schedule {
+  [index: number]: {
+    dow: string;
+    classes: Clase[];
+  };
+}
+
+const schedule: Schedule = [
   {
     dow: 'Monday',
     classes: [
