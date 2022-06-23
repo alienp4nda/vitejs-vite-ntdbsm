@@ -1,132 +1,16 @@
 <script setup lang="ts">
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-import Subject from './components/Subject.vue';
-import DayOfWeek from './components/DayOfWeek.vue';
 
-interface Clase {
-  subject: string;
-  timeslot: string;
-  started: string;
-  stopped: string;
-}
-
-interface Schedule {
-  [index: number]: {
-    dow: string;
-    classes: Clase[];
-  };
-}
-
-const schedule: Schedule = [
-  {
-    dow: 'Monday',
-    classes: [
-      {
-        subject: 'Math',
-        timeslot: '09:00 - 10:00',
-        started: '07:50 2022-06-07',
-        stopped: '08:50 2022-06-07',
-      },
-      {
-        subject: 'Writing',
-        timeslot: '09:00 - 10:00',
-        started: '08:50 2022-06-07',
-        stopped: '',
-      },
-    ],
-  },
-  {
-    dow: 'Tuesday',
-    classes: [
-      {
-        subject: 'Math',
-        timeslot: '09:00 - 10:00',
-        started: '',
-        stopped: '',
-      },
-      {
-        subject: 'Writing',
-        timeslot: '09:00 - 10:00',
-        started: '',
-        stopped: '',
-      },
-      {
-        subject: 'Science',
-        timeslot: '09:00 - 10:00',
-        started: '',
-        stopped: '',
-      },
-    ],
-  },
-  {
-    dow: 'Wednesday',
-    classes: [
-      {
-        subject: 'Math',
-        timeslot: '09:00 - 10:00',
-        started: '',
-        stopped: '',
-      },
-      {
-        subject: 'Writing',
-        timeslot: '09:00 - 10:00',
-        started: '',
-        stopped: '',
-      },
-    ],
-  },
-  {
-    dow: 'Thursday',
-    classes: [
-      {
-        subject: 'Math',
-        timeslot: '09:00 - 10:00',
-        started: '',
-        stopped: '',
-      },
-      {
-        subject: 'Writing',
-        timeslot: '09:00 - 10:00',
-        started: '',
-        stopped: '',
-      },
-    ],
-  },
-  {
-    dow: 'Friday',
-    classes: [
-      {
-        subject: 'Math',
-        timeslot: '09:00 - 10:00',
-        started: '',
-        stopped: '',
-      },
-      {
-        subject: 'Writing',
-        timeslot: '09:00 - 10:00',
-        started: '',
-        stopped: '',
-      },
-    ],
-  },
-];
 </script>
 
 <template>
   <nav>
     <button type="button">Login</button>
   </nav>
-  <h2>Class Schedule</h2>
+  <!-- <h2>Class Schedule</h2> -->
   <div class="container">
-    <DayOfWeek
-      v-for="(item, index) in schedule"
-      :key="item + index"
-      :dow="item.dow"
-      class="dow"
-    >
-      <Subject v-for="clase in item.classes" :clase="clase" class="subject" />
-    </DayOfWeek>
+    <router-view></router-view>
   </div>
 </template>
 
@@ -153,13 +37,13 @@ nav button {
     margin: 0 auto;
   }
 
-  .dow {
+  /* .dow {
     width: 100%;
   }
 
   .subject {
     width: 90%;
-  }
+  } */
 
   nav {
     width: 100%;
