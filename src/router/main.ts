@@ -8,8 +8,9 @@ import { createRouter, createWebHistory } from 'vue-router';
 // Each route should map to a component.
 // We'll talk about nested routes later.
 const routes = [
-  { path: '/', component: Login },
-  { path: '/schedule', component: Schedule },
+  { path: '/', redirect: { name: 'login' } },
+  { path: '/login', name: 'login', component: Login },
+  { path: '/schedule', name: 'schedule', component: Schedule },
 ];
 
 // 3. Create the router instance and pass the `routes` option
