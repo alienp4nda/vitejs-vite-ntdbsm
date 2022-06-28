@@ -10,7 +10,19 @@ import { createRouter, createWebHistory } from 'vue-router';
 const routes = [
   { path: '/', redirect: { name: 'login' } },
   { path: '/login', name: 'login', component: Login },
-  { path: '/schedule', name: 'schedule', component: Schedule },
+  {
+    path: '/schedule',
+    name: 'schedule',
+    component: Schedule,
+    // TODO: implement guarded routes
+    // beforeEnter: (to, from, next) => {
+    //   if(store.state.authenticated == false) {
+    //       next(false);
+    //   } else {
+    //       next();
+    //   }
+    //}
+  },
 ];
 
 // 3. Create the router instance and pass the `routes` option
