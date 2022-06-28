@@ -2,7 +2,12 @@
 // These can be imported from other files
 import Schedule from '../views/Schedule.vue';
 import Login from '../views/Login.vue';
-import { createRouter, createWebHistory } from 'vue-router';
+import {
+  createRouter,
+  createWebHistory,
+  RouteLocationNormalized,
+} from 'vue-router';
+import { useAuthStore } from '../stores/auth';
 
 // 2. Define some routes
 // Each route should map to a component.
@@ -14,14 +19,7 @@ const routes = [
     path: '/schedule',
     name: 'schedule',
     component: Schedule,
-    // TODO: implement guarded routes
-    // beforeEnter: (to, from, next) => {
-    //   if(store.state.authenticated == false) {
-    //       next(false);
-    //   } else {
-    //       next();
-    //   }
-    //}
+    meta: { requiresAuth: true },
   },
 ];
 
@@ -32,6 +30,11 @@ const router = createRouter({
   // 4. Provide the history implementation to use. We are using the hash history for simplicity here.
   history: createWebHistory(),
   routes, // short for `routes: routes`
+});
+
+router.beforeEach((to) => {
+  const store = useAuthStore();
+  if (to.meta.requiresAuth && !store.authenticated) return '/login';
 });
 
 export default router;

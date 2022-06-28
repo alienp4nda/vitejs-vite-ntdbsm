@@ -1,10 +1,15 @@
 <script setup lang="ts">
 import { useRouter } from 'vue-router';
 import { ref } from 'vue';
+import { useAuthStore } from '../stores/auth';
+
 const router = useRouter();
+const store = useAuthStore();
 const email = ref();
 const password = ref();
+
 const login = (e) => {
+  store.authenticated = true; // authentication request sent to the server
   router.push({ name: 'schedule' });
 };
 </script>
