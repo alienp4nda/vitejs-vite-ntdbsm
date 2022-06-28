@@ -1,13 +1,12 @@
 <script setup lang="ts">
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-
 </script>
 
 <template>
-  <nav>
+  <!-- <nav>
     <button type="button">Login</button>
-  </nav>
+  </nav> -->
   <!-- <h2>Class Schedule</h2> -->
   <div class="container">
     <router-view></router-view>

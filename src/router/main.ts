@@ -1,13 +1,15 @@
 // 1. Define route components.
 // These can be imported from other files
 import Schedule from '../views/Schedule.vue';
+import Login from '../views/Login.vue';
 import { createRouter, createWebHistory } from 'vue-router';
 
 // 2. Define some routes
 // Each route should map to a component.
 // We'll talk about nested routes later.
 const routes = [
-  { path: '/', component: Schedule },
+  { path: '/', component: Login },
+  { path: '/schedule', component: Schedule },
 ];
 
 // 3. Create the router instance and pass the `routes` option
