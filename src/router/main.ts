@@ -2,11 +2,7 @@
 // These can be imported from other files
 import Schedule from '../views/Schedule.vue';
 import Login from '../views/Login.vue';
-import {
-  createRouter,
-  createWebHistory,
-  RouteLocationNormalized,
-} from 'vue-router';
+import { createRouter, createWebHistory } from 'vue-router';
 import { useAuthStore } from '../stores/auth';
 
 // 2. Define some routes
