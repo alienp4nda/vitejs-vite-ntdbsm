@@ -124,7 +124,7 @@ input {
   padding-bottom: 5px;
   -webkit-appearance: none;
   background: transparent;
-  /* color: #414141; */
+  color: #ffffff;
 }
 
 fieldset {
@@ -144,7 +144,6 @@ input + label {
   top: 25px;
   font-size: 24px;
   font-weight: bold;
-  color: #414141;
 }
 input:focus + label {
   top: 5px;

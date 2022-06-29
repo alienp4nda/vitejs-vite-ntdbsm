@@ -7,6 +7,7 @@ let currentPath = router.currentRoute.value.path;
 
 <template>
   <nav v-if="currentPath !== '/login'">
+    <a href="/admin">Admin</a>
     <a href="/logout">Logout</a>
   </nav>
 </template>
@@ -14,12 +15,13 @@ let currentPath = router.currentRoute.value.path;
 <style scoped>
 nav {
   position: absolute;
-  top: 1em;
-  right: 0.75em;
+  top: 1rem;
+  right: 1em;
 }
 
 nav a {
   padding: 0.75em;
+  margin: 0 0.25em 0 0.25em;
 }
 
 @media (max-width: 30.5em) {

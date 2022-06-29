@@ -4,10 +4,9 @@ import Navigation from './components/Navigation.vue';
 </script>
 
 <template>
-  <Header>
+  <Header title="Class Schedule">
     <Navigation />
   </Header>
-  <h2>Class Schedule</h2>
   <div class="container">
     <router-view></router-view>
   </div>

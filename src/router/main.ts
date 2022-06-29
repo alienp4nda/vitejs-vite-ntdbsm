@@ -16,7 +16,7 @@ const routes = [
     path: '/schedule',
     name: 'schedule',
     component: Schedule,
-    meta: { requiresAuth: true },
+    // meta: { requiresAuth: true },
   },
 ];
 
