@@ -10,6 +10,7 @@ import { useAuthStore } from '../stores/auth';
 // We'll talk about nested routes later.
 const routes = [
   { path: '/', redirect: { name: 'login' } },
+  { path: '/logout', redirect: { name: 'login' } },
   { path: '/login', name: 'login', component: Login },
   {
     path: '/schedule',

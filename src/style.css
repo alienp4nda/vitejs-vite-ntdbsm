@@ -28,7 +28,8 @@ body {
   text-align: center;
 }
 
-button {
+button,
+a {
   display: inline-block;
   border: none;
   border-radius: 0.5em;
@@ -45,11 +46,14 @@ button {
 }
 
 button:hover,
-button:focus {
+button:focus,
+a:hover,
+a:focus {
   background: #1e7c9d;
 }
 
-button:active {
+button:active,
+a:active {
   transform: scale(0.99);
 }
 
