@@ -47,6 +47,9 @@ const login = (e) => {
 
 <style scoped>
 form {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
   background: #414141;
   padding: 2em 5em 5em 5em;
   border-radius: 1em;
