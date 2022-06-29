@@ -1,9 +1,12 @@
 <script setup lang="ts">
+import Header from './components/Header.vue';
 import Navigation from './components/Navigation.vue';
 </script>
 
 <template>
-  <Navigation />
+  <Header>
+    <Navigation />
+  </Header>
   <h2>Class Schedule</h2>
   <div class="container">
     <router-view></router-view>
