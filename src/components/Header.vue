@@ -10,8 +10,8 @@ const route = useRoute();
 </script>
 <template>
   <div class="header">
+    <h1>{{ title }}</h1>
     <div class="header-content" v-if="route.path !== '/login'">
-      <h1>{{ title }}</h1>
       <slot></slot>
     </div>
   </div>
@@ -25,7 +25,7 @@ const route = useRoute();
   background-color: #414141;
 }
 
-.header-content h1 {
+.header h1 {
   margin: 0;
 }
 </style>
